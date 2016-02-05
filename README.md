@@ -1,4 +1,4 @@
 # log4j2
-fast-log4j2 source learning process
+log4j2 source(core,api) learning process
 
 based on 2.5
