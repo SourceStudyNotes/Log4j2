@@ -21,9 +21,9 @@
 		<version>2.5</version>
 		<relativePath>../</relativePath>
 	</parent>
-	<artifactId>log4j-core</artifactId>
+	<artifactId>log4j-core-api</artifactId>
 	<packaging>jar</packaging>
-	<name>Apache Log4j Core</name>
+	<name>Apache Log4j Core and Api</name>
 	<description>The Apache Log4j Implementation</description>
 	<properties>
 		<log4jParentDir>${basedir}/..</log4jParentDir>
@@ -32,10 +32,10 @@
 	</properties>
 	<dependencies>
 		<!-- Naturally, all implementations require the log4j-api JAR -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-		</dependency>
+		</dependency> -->
 		<!-- Used for OSGi bundle support -->
 		<dependency>
 			<groupId>org.osgi</groupId>
