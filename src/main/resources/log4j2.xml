@@ -3,7 +3,7 @@
 <!-- Don't forget to set system property -DLog4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector 
 	to make all loggers asynchronous. -->
 
-<Configuration status="error">
+<Configuration status="trace">
 	<Appenders>
 		<!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
 		<RandomAccessFile name="RandomAccessFile" fileName="logs/heika.log"
