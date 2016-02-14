@@ -81,6 +81,7 @@ public final class ReflectionUtil {
                 }
             }
         } catch (final Exception e) {
+            //http://www.infoq.com/cn/news/2013/07/Oracle-Removes-getCallerClass,根据调用栈感知调用方法调用方
             LOGGER.info("sun.reflect.Reflection.getCallerClass is not supported. "
                     + "ReflectionUtil.getCallerClass will be much slower due to this.", e);
             getCallerClass = null;

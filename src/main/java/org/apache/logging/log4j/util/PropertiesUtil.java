@@ -32,6 +32,9 @@ import org.apache.logging.log4j.status.StatusLogger;
  * Helps access properties. This utility provides a method to override system properties by specifying properties in a
  * properties file.
  * </p>
+ * <p>
+ * 指定某个loggerContextFactory，loggerContext等
+ * </p>
  */
 public final class PropertiesUtil {
 
