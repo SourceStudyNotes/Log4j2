@@ -43,11 +43,11 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- Required for AsyncLoggers -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.lmax</groupId>
 			<artifactId>disruptor</artifactId>
 			<optional>true</optional>
-		</dependency>
+		</dependency> -->
 		<!-- Required for JSON support -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
