@@ -10,14 +10,9 @@ public class Main {
         System.setProperty("AsyncLogger.ThreadNameStrategy", "CACHED");// 如果在线程池中通过Thread.setName()，这里需要修改为UNCACHED
         System.setProperty("log4j.Clock", "CachedClock");
     }
-    private static ThreadLocal<Logger> threadLocalLogger = new ThreadLocal<Logger>() {
-        protected Logger initialValue() {
-            return LogManager.getLogger(Main.class.toString() + Thread.currentThread().getId());
-        }
-    };
+    private static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        Logger logger = threadLocalLogger.get();
         logger.info("Start");
     }
 
