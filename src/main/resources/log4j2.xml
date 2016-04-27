@@ -2,7 +2,7 @@
 
 <!-- Don't forget to set system property -DLog4jContextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector 
 	to make all loggers asynchronous. -->
-
+<!--日了，跟了好久源码发现没有加<filters></filters>,http://bitfish.eu/java/log4j-2-multiple-appenders-with-different-log-levels/-->
 <Configuration status="trace">
 	<Appenders>
 		<!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
