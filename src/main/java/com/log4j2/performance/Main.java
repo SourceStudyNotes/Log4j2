@@ -13,7 +13,8 @@ public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        logger.info("Start");
+        logger.info("Start info!");
+        logger.error("Start error!");
     }
 
 }

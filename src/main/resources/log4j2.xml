@@ -6,19 +6,39 @@
 <Configuration status="trace">
 	<Appenders>
 		<!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
-		<RandomAccessFile name="RandomAccessFile" fileName="logs/heika.log"
+		<RandomAccessFile name="errorRandomAccessFile"
+			fileName="logs/heika-error.log" immediateFlush="false" append="true">
+			<LevelRangeFilter minLevel="error" maxLevel="error"
+				onMatch="ACCEPT" onMismatch="NEUTRAL" />
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+			</PatternLayout>
+		</RandomAccessFile>
+		<RandomAccessFile name="infoRandomAccessFile"
+			fileName="logs/heika-info.log" immediateFlush="false" append="true">
+			<LevelRangeFilter minLevel="info" maxLevel="info"
+				onMatch="ACCEPT" onMismatch="NEUTRAL" />
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
+			</PatternLayout>
+		</RandomAccessFile>
+		<RandomAccessFile name="rootAppender" fileName="logs/heika-root.log"
 			immediateFlush="false" append="false">
 			<PatternLayout>
 				<Pattern>%d %p %c{1.} [%t] %m %ex%n</Pattern>
 			</PatternLayout>
 		</RandomAccessFile>
-		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
-		</Console>
+		<Async name="asyncError">
+			<AppenderRef ref="errorRandomAccessFile" />
+		</Async>
+		<Async name="asyncInfo">
+			<AppenderRef ref="infoRandomAccessFile" />
+		</Async>
 	</Appenders>
 	<Loggers>
-		<root level="info" includeLocation="false">
-			<AppenderRef ref="RandomAccessFile" />
+		<root level="debug">
+			<AppenderRef ref="asyncInfo" />
+			<AppenderRef ref="asyncError" />
 		</root>
 	</Loggers>
 </Configuration>
