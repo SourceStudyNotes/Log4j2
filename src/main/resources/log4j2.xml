@@ -9,7 +9,7 @@
 		<!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
 		<!-- info -->
 		<RollingRandomAccessFile name="infoAppender"
-			fileName="logs/heika-info.log" filePattern="logs/im-$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log"
+			fileName="logs/heika-info.log" filePattern="logs/$${date:yyyy-MM-dd}/heika-%d{yyyy-MM-dd HH-mm}.%i.log"
 			immediateFlush="false" append="true">
 			<LevelRangeFilter minLevel="info" maxLevel="info"
 				onMatch="ACCEPT" onMismatch="DENY" />
@@ -19,13 +19,13 @@
 			<Policies>
 				<TimeBasedTriggeringPolicy interval="2"
 					modulate="true" />
-				<SizeBasedTriggeringPolicy size="250 MB" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
 			</Policies>
 			<DefaultRolloverStrategy max="2000" />
 		</RollingRandomAccessFile>
 		<!-- warn -->
 		<RollingRandomAccessFile name="warnAppender"
-			fileName="logs/heika-warn.log" filePattern="logs/im-$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log"
+			fileName="logs/heika-warn.log" filePattern="logs/$${date:yyyy-MM-dd}/heika-%d{yyyy-MM-dd-HH-mm}.%i.log"
 			immediateFlush="false" append="true">
 			<LevelRangeFilter minLevel="warn" maxLevel="warn"
 				onMatch="ACCEPT" onMismatch="DENY" />
@@ -40,7 +40,7 @@
 		</RollingRandomAccessFile>
 		<!-- error -->
 		<RollingRandomAccessFile name="errorAppender"
-			fileName="logs/heika-error.log" filePattern="logs/im-$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log"
+			fileName="logs/heika-error.log" filePattern="logs/$${date:yyyy-MM-dd}/heika-%d{yyyy-MM-dd-HH-mm}.%i.log"
 			immediateFlush="false" append="true">
 			<LevelRangeFilter minLevel="error" maxLevel="error"
 				onMatch="ACCEPT" onMismatch="DENY" />

@@ -13,9 +13,11 @@ public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        logger.info("Start info!");
-        logger.warn("Start info!");
-        logger.error("Start error!", new Exception("Error!"));
+        for (int i = 0; i < 1000000; i++) {
+            logger.info("Start info!");
+            logger.warn("Start info!");
+            logger.error("Start error!", new Exception("Error!"));
+        }
     }
 
 }
