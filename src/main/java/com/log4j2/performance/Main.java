@@ -14,7 +14,8 @@ public class Main {
 
     public static void main(String[] args) {
         logger.info("Start info!");
-        logger.error("Start error!");
+        logger.warn("Start info!");
+        logger.error("Start error!", new Exception("Error!"));
     }
 
 }
