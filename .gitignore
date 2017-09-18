@@ -4,3 +4,5 @@
 .classpath
 /.settings
 /logs
+/.idea
+log4j-core-api.iml
